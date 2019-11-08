@@ -11,7 +11,7 @@ import pathlib
 import warnings
 warnings.filterwarnings("ignore")
 import io
-$from flask import send_file
+from flask import send_file
 import flask
 
 
