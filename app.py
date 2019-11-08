@@ -60,7 +60,7 @@ tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'Co
 Siade_Fluxospt1 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos1.xlsx'))
 Siade_Fluxospt2 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos.xlsx'))
 Siade_Fluxos = pd.concat([Siade_Fluxospt1, Siade_Fluxospt2])
-print('Import OK')
+#print('Import OK')
 
 df_trem_formado = {}
 df_tremkm = {}
@@ -401,7 +401,7 @@ for i in lista:
     df_Locomotiva[i] = tblDesempenhoLocomotivaPIVOT
     df_Siade[i] = tblSiade
     cont += 1
-    print(round(cont/12,2))
+    #print(round(cont/12,2))
 
 ## Velocidade
 df_SiadeFluxos = {}
@@ -489,7 +489,7 @@ for z in lista:
     df_prod[z] = SiadeFilt
     
     cont += 1
-    print(round(cont/12,2))
+    #print(round(cont/12,2))
 
 ### INICIO DASHBOARD
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -662,7 +662,7 @@ def update_graph3(yaxis_column_name):
     correlation = np.corrcoef(x, y)[0,1]
     rsq = correlation**2
     rsq = round(rsq, 4)
-    print(rsq)
+    #print(rsq)
 
     trace1 = go.Scatter(x=df_tremkm[yaxis_column_name]['Trem Km - Siade'],
                         y=df_siade[yaxis_column_name]['TKU - Siade'],
@@ -981,7 +981,7 @@ def update_graph12(yaxis_column_name):
     correlation = np.corrcoef(x, y)[0,1]
     rsq = correlation**2
     rsq = round(rsq, 4)
-    print(rsq)    
+    #print(rsq)    
 
     trace1 = go.Scatter(x=x,
                         y=y,
