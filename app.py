@@ -24,11 +24,16 @@ lista = ['EFC', 'EFVM', 'FTC', 'FTL', 'FCA', 'RMN', 'RMP', 'RMO', 'RMS', 'MRS', 
 
 # Querys
 i=[1]
+print('ok')
 for x in i:
     TremKMCarga = pd.read_excel(DATA_PATH.joinpath('Carga.xlsx'))
+    print('ok')
     TremKMServ = pd.read_excel(DATA_PATH.joinpath('Serv.xlsx'))
+    print('ok')
     Siade = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
+    print('ok')
     TremFormado = pd.read_excel(DATA_PATH.joinpath('TremFormado.xlsx'))
+    print('ok')
     
     tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';', decimal=',')
     tblDesempenhoVagaox = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoVagao.csv'), sep=';', decimal=',')
