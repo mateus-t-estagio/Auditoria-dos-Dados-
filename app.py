@@ -15,6 +15,12 @@ from flask import send_file
 import flask
 
 
+try:
+import psyco
+psyco.full()
+except ImportError
+pass
+
 #### TREM FORMADO
 # Path
 PATH = pathlib.Path(__file__).parent
