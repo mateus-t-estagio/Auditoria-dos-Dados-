@@ -23,65 +23,65 @@ DATA_PATH = PATH.joinpath("Data").resolve()
 lista = ['EFC', 'EFVM', 'FTC', 'FTL', 'FCA', 'RMN', 'RMP', 'RMO', 'RMS', 'MRS', 'EFPO', 'FNSTN']
 
 # Querys
-i=[1]
+
 print('ok1')
-for x in i:
-    TremKMCarga = pd.read_excel(DATA_PATH.joinpath('Carga.xlsx'))
-    print('ok11')
-    TremKMServ = pd.read_excel(DATA_PATH.joinpath('Serv.xlsx'))
-    print('ok111')
-    Siade = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
-    print('ok1111')
-    TremFormado = pd.read_excel(DATA_PATH.joinpath('TremFormado.xlsx'))
-    print('ok11111')
-    
-    tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';', decimal=',')
-    print('ok1111111')
-    tblDesempenhoVagaox = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoVagao.csv'), sep=';', decimal=',')
-    print('ok1111111111111')
-    tblFerroviax = pd.read_csv(DATA_PATH.joinpath('tblFerrovia.csv'), sep=';')
-    print('ok fim')
+
+TremKMCarga = pd.read_excel(DATA_PATH.joinpath('Carga.xlsx'))
+print('ok11')
+TremKMServ = pd.read_excel(DATA_PATH.joinpath('Serv.xlsx'))
+print('ok111')
+Siade = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
+print('ok1111')
+TremFormado = pd.read_excel(DATA_PATH.joinpath('TremFormado.xlsx'))
+print('ok11111')
+
+tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';', decimal=',')
+print('ok1111111')
+tblDesempenhoVagaox = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoVagao.csv'), sep=';', decimal=',')
+print('ok1111111111111')
+tblFerroviax = pd.read_csv(DATA_PATH.joinpath('tblFerrovia.csv'), sep=';')
+print('ok fim')
 # Tabela referência para ferrovia
-    print('ok2')
-    tblFerroviax = tblFerroviax[['CodigoFerrovia', 'SiglaFerrovia']]
+print('ok2')
+tblFerroviax = tblFerroviax[['CodigoFerrovia', 'SiglaFerrovia']]
 
-    tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'CodigoFerrovia')
-    tblDesempenhoVagaox = tblDesempenhoVagaox.merge(tblFerroviax, on = 'CodigoFerrovia')
-    tblDesempenhoVagaox = tblDesempenhoVagaox.fillna(0)
+tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'CodigoFerrovia')
+tblDesempenhoVagaox = tblDesempenhoVagaox.merge(tblFerroviax, on = 'CodigoFerrovia')
+tblDesempenhoVagaox = tblDesempenhoVagaox.fillna(0)
 
-    tblDesempenhoLocomotiva = tblDesempenhoLocomotivax
-    tblDesempenhoVagao = tblDesempenhoVagaox
-    print('ok fim 2')
+tblDesempenhoLocomotiva = tblDesempenhoLocomotivax
+tblDesempenhoVagao = tblDesempenhoVagaox
+print('ok fim 2')
 
 # Querys
-    print('ok3')
-    tblAbastecimentox = pd.read_csv(DATA_PATH.joinpath('tblAbastecimento.csv'), sep=';')
-    tblAbastecimentoFerroviax = pd.read_csv(DATA_PATH.joinpath('tblAbastecimentoFerrovia.csv'), sep=';')
-    tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';')
-    tblFerroviax = pd.read_csv(DATA_PATH.joinpath('tblFerrovia.csv'), sep=';')
-    tblSiadex = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
-    print('ok fim 3')
+print('ok3')
+tblAbastecimentox = pd.read_csv(DATA_PATH.joinpath('tblAbastecimento.csv'), sep=';')
+tblAbastecimentoFerroviax = pd.read_csv(DATA_PATH.joinpath('tblAbastecimentoFerrovia.csv'), sep=';')
+tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';')
+tblFerroviax = pd.read_csv(DATA_PATH.joinpath('tblFerrovia.csv'), sep=';')
+tblSiadex = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
+print('ok fim 3')
 
 # Tabela referência para ferrovia
-    tblFerroviax = tblFerroviax[['CodigoFerrovia', 'SiglaFerrovia']]
-    print('ok fim 4')
+tblFerroviax = tblFerroviax[['CodigoFerrovia', 'SiglaFerrovia']]
+print('ok fim 4')
 # PROCV pro nome da ferrovia usando o Codigo Ferrovia
-    tblAbastecimentox = tblAbastecimentox.merge(tblFerroviax, on = 'CodigoFerrovia')
-    tblAbastecimentoFerroviax = tblAbastecimentoFerroviax.merge(tblFerroviax, on = 'CodigoFerrovia')
-    tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'CodigoFerrovia')
-    print('ok fim 5')
-    #Siade_Fluxospt1 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos1.xlsx'))
-    print('ok teste fim 5.1')
-    #Siade_Fluxospt2 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos.xlsx'))
-    print('ok teste fim 5.2')
-    #Siade_Fluxos = pd.concat([Siade_Fluxospt1, Siade_Fluxospt2])
-    print('ok fim 6')
+tblAbastecimentox = tblAbastecimentox.merge(tblFerroviax, on = 'CodigoFerrovia')
+tblAbastecimentoFerroviax = tblAbastecimentoFerroviax.merge(tblFerroviax, on = 'CodigoFerrovia')
+tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'CodigoFerrovia')
+print('ok fim 5')
+#Siade_Fluxospt1 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos1.xlsx'))
+print('ok teste fim 5.1')
+#Siade_Fluxospt2 = pd.read_excel(DATA_PATH.joinpath('Siade_Fluxos.xlsx'))
+print('ok teste fim 5.2')
+#Siade_Fluxos = pd.concat([Siade_Fluxospt1, Siade_Fluxospt2])
+print('ok fim 6')
 #print('Import OK')
 
-    df_trem_formado = {}
-    df_tremkm = {}
-    df_siade = {}
-    i=0
+df_trem_formado = {}
+df_tremkm = {}
+df_siade = {}
+
 for i in lista:
     ferrovia = i
     # Filtro pra ferrovia
