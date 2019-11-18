@@ -83,6 +83,7 @@ df_tremkm = {}
 df_siade = {}
 
 for i in lista:
+    print('vamos lá')
     ferrovia = i
     # Filtro pra ferrovia
     iTremKMCarga = TremKMCarga['Ferrovia'] == ferrovia
@@ -119,10 +120,12 @@ for i in lista:
 
     # Adequação dos dados do dataframe tremkm
     lista2 = ['Nº Trens', 'Tempo de Viagem', 'Distância (km)', 'TremKm', 'TKU', 'TUa']
+    print('deu certo?')
 
     for x in lista2:
+        print('teste 2')
         TremFormadoFilt[x] = TremFormadoFilt[x].astype(float)
-
+    print('bora tentar de novo')
     df = TremFormadoFilt.pivot_table(['Nº Trens', 'Tempo de Viagem', 'Distância (km)', 'TremKm', 'TKU', 'TUa'],
                                         ['Período'], aggfunc='sum')
     
@@ -145,6 +148,7 @@ for i in lista:
     lst = pd.date_range('2010-11', '2019-7', freq='m')
     df.index = df.index.strftime('%m-%Y')
     df_trem_formado[i] = df
+    print('tomara que dê bom ')
 
 ### Material Rodante
 totalloc = ['NumeroImobilizacaoOficinaPropria',
