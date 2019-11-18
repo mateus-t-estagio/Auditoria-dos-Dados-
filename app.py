@@ -23,8 +23,8 @@ DATA_PATH = PATH.joinpath("Data").resolve()
 lista = ['EFC', 'EFVM', 'FTC', 'FTL', 'FCA', 'RMN', 'RMP', 'RMO', 'RMS', 'MRS', 'EFPO', 'FNSTN']
 
 # Querys
-i=1
-for i > 0:
+i=[1]
+for x in i:
     TremKMCarga = pd.read_excel(DATA_PATH.joinpath('Carga.xlsx'))
     TremKMServ = pd.read_excel(DATA_PATH.joinpath('Serv.xlsx'))
     Siade = pd.read_excel(DATA_PATH.joinpath('Siade.xlsx'))
