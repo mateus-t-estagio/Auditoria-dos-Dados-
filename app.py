@@ -24,7 +24,7 @@ lista = ['EFC', 'EFVM', 'FTC', 'FTL', 'FCA', 'RMN', 'RMP', 'RMO', 'RMS', 'MRS', 
 
 # Querys
 i=[1]
-print('ok')
+print('ok1')
 for x in i:
     TremKMCarga = pd.read_excel(DATA_PATH.joinpath('Carga.xlsx'))
     print('ok')
@@ -36,9 +36,13 @@ for x in i:
     print('ok')
     
     tblDesempenhoLocomotivax = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoLocomotiva.csv'), sep=';', decimal=',')
+    print('ok')
     tblDesempenhoVagaox = pd.read_csv(DATA_PATH.joinpath('tblDesempenhoVagao.csv'), sep=';', decimal=',')
+    print('ok')
     tblFerroviax = pd.read_csv(DATA_PATH.joinpath('tblFerrovia.csv'), sep=';')
+    print('ok fim')
 # Tabela referência para ferrovia
+    print('ok2')
     tblFerroviax = tblFerroviax[['CodigoFerrovia', 'SiglaFerrovia']]
 
     tblDesempenhoLocomotivax = tblDesempenhoLocomotivax.merge(tblFerroviax, on = 'CodigoFerrovia')
@@ -47,6 +51,7 @@ for x in i:
 
     tblDesempenhoLocomotiva = tblDesempenhoLocomotivax
     tblDesempenhoVagao = tblDesempenhoVagaox
+    print('ok fim 2')
 
 # Querys
     tblAbastecimentox = pd.read_csv(DATA_PATH.joinpath('tblAbastecimento.csv'), sep=';')
